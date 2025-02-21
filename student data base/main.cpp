@@ -28,6 +28,8 @@ Options to add a new student, delete an existing student,
 #include <sstream>
 #include <cstdlib>
 #include <ctime>
+#include <map>
+#include <iomanip>
 //array of students with detail structure
 
 std::string Id_creator();
@@ -36,7 +38,7 @@ void print_all();
 void record_modifier();
 void search_print();
 void add_delete_s();
-
+int id_exist(std::string I_D );
 
 struct student{
      std::string Firstname;
@@ -151,8 +153,11 @@ void add_delete_s(){
           getline(std::cin,fname);
           std::cout<<"\nenter students lastname:";
           getline(std::cin,lname);
-         id=id_creator();                                              //check if thers no such id
-          std::cout<<"\nenter students GPA:";
+         id=id_creator();                                              
+         while(id_exist(id)==1){
+          id=id_creator();                                              
+         } 
+         std::cout<<"\nenter students GPA:";
           getline(std::cin,gpa);
           std::cout<<"\nenter studentss major:";
           getline(std::cin,major);
@@ -168,9 +173,40 @@ void add_delete_s(){
           
      }else if(input1==2){
 
-     }
+     };
 
 };
+
+int id_exist(std::string I_D){
+
+     std::map <std::string ,std::string> configuration;
+     std::ifstream infile;
+     std::string line;
+     
+     infile.open("data.txt");
+
+     if(!infile){
+          std::cout<<"error accured!";
+          exit(1);
+     };
+
+     size_t pos;
+     int st=0;
+     while(infile.good()){
+          getline(infile,line);
+          pos=line.find(I_D);
+          if(pos!=std::string::npos){
+
+               return 1;
+               st=1;
+          }
+     }
+     if(st==0){
+
+          return 0;
+     }
+     
+}
 
 /*
      APP FEATURES:
