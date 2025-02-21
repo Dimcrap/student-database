@@ -1,0 +1,75 @@
+Firstname0 :Laylah  
+Lastname0 :Hawkins  
+id0: 
+gpa0:2.5 
+major0:healthcare administration 
+
+Firstname1 :Esther 
+Lastname1 :Sims 
+id1: 
+gpa1:1.75 
+major1:psychology 
+
+
+Firstname2:Kody 
+Lastname2:Zavala 
+id2: 
+gpa2:4 
+major2:journalism 
+
+
+Firstname3:Bryan 
+Lastname3:Cobb 
+id3:  
+gpa3:3 
+major3:electrical engineering 
+
+
+Firstname4:Paula 
+Lastname4:Hendrix 
+id4:  
+gpa4:2.5 
+major4:criminal justice 
+
+
+Firstname5:Elianna 
+Lastname5:Griffin 
+id5:  
+gpa5:1.5 
+major5:human services 
+
+Firstname6:Trevin 
+Lastname6:Scott 
+id6:  
+gpa6:3.5 
+major6:economic 
+
+
+Firstname7:Yuliana 
+Lastname7:Phillips 
+id7:  
+gpa7:4 
+major7:social sciences 
+
+
+Firstname8:Ruby 
+Lastname8:Padilla 
+id8:  
+gpa8:3  
+major8:biochemisty 
+
+
+Firstname9:Emanuel 
+Lastname9:Navarro 
+id9:  
+gpa9:1.75 
+major9:psychology 
+
+
+Firstname10:Jessie 
+Lastname10:Landry 
+id10:  
+gpa10:2.5  
+major10:human services 
+
+
