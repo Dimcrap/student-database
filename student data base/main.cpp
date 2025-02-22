@@ -30,7 +30,7 @@ Options to add a new student, delete an existing student,
 #include <ctime>
 #include <map>
 #include <iomanip>
-//array of students with detail structure
+
 
 std::string Id_creator();
 void mainscreen();
@@ -110,7 +110,7 @@ void mainscreen(){
     std::cout<<"modifier";
    case 3:
    search_print();
-    std::cout<<"deleter";
+    //std::cout<<"deleter";
    case 4:
     std::cout<<"add and delete student";
     add_delete_s();
@@ -126,6 +126,66 @@ void record_modifier(){
 };
 
 void search_print(){
+    std::string ID;
+    std::cout<<"\t\t\t\t\tstudent finder\nenter student ID:";
+    getline(std::cin,ID);
+    
+    while(id_exist(ID)!=1){
+     std::cout<<strerror(22)<<std::endl;
+    std::cout<<"enter a valid ID(enter 1 to go to leading screen):";
+    getline(std::cin,ID);
+    if(ID=="1"){
+    mainscreen();
+    break;
+    }
+    }   
+    
+    std::ifstream R_file("data.txt");
+    std::sring line;
+    std::string line_c;
+    if(!R_file.is_open()){
+     std::cout<<"\n data loading Error!";
+     mainscreen();
+    };
+
+    size_t pos;
+    while(R_file.good()){
+
+     getlin(R_file,line);
+     pos=line.find(ID);
+     if(pos!=std::string::npos){
+          line_c=line;
+     }
+    };
+     
+    std::string student_num;
+for (int i=1;line_c[i]!=':';i++){
+    student_num=+line_c[i];
+}; 
+
+std::map<std::string,std::string> configuration;
+std::ifstream the_file("data.txt");
+//the_file.open("data.txt",std::ios::out|std::ios::app);
+std::string line_2;    
+
+while(getline(the_file,line_2)){
+std::string key,value;
+std::stringstream ss(line_2);
+getline(ss,key,':');
+std::cout<<key;
+ss>>std::ws;
+getline(ss,value);
+configuration[key]=value;
+};
+std::cout<<"firstname:"<<configuration["Firstname"+student_num];
+std::cout<<"\nlastname:"<<configuration["Lastname"+student_num];
+std::cout<<"\nId:"<<ID;
+std::cout<<"\nGPA:"<<configuration["gpa"+student_num];
+std::cout<<"\nMajor:"<<configuration["major",student_num];
+
+
+
+
 
 };
 
